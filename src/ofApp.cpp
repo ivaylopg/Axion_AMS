@@ -9,6 +9,7 @@ void ofApp::setup(){
     
     cam.setup();
     cam.reset(-100);
+    cam.loadCameraPosition();
     //cam.lockHeight = false;
     cam.setMinMaxY(40, 40);
     //cam.speed = 1.0f;
@@ -47,12 +48,13 @@ void ofApp::setup(){
     light2.setPosition(-1920, -1080, -500);
     
     cam.setFarClip(20000.0);
+    eSpin = -0.01;
     
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    earthSphere.rotate(eSpin, 0, 1.0, 0.0);
 }
 
 //--------------------------------------------------------------
@@ -147,6 +149,10 @@ void ofApp::keyReleased(int key){
             
         case 'z':
             showFR = !showFR;
+            break;
+            
+        case 's':
+            cam.saveCameraPosition();
             break;
             
         default:

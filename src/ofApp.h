@@ -30,9 +30,10 @@ class ofApp : public ofBaseApp{
     ofSpherePrimitive earthSphere;
     ofImage stars;
     ofImage earth;
-    
     ofMaterial starsM;
     ofMaterial earthM;
+    
+    float eSpin;
     
 	ofxAssimpModelLoader station;
     ofMesh stationMesh;
