@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>97717204-3623-4917-8BAC-EDBB83A83AB6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Axion_AMS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0F73CC00-79FB-40B8-BF07-AADF03F813AC</key>
+		<string>https://github.com/ivaylopg/ofxFPSCamera.git</string>
+		<key>B79A4AF2-F6D8-49F8-A3E0-00C424CEDB6D</key>
+		<string>https://github.com/ivaylopg/Axion_AMS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Axion_AMS.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0F73CC00-79FB-40B8-BF07-AADF03F813AC</key>
+		<string>../../../../../addons/ofxFPSCamera</string>
+		<key>B79A4AF2-F6D8-49F8-A3E0-00C424CEDB6D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ivaylopg/Axion_AMS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B79A4AF2-F6D8-49F8-A3E0-00C424CEDB6D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B79A4AF2-F6D8-49F8-A3E0-00C424CEDB6D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Axion_AMS</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0F73CC00-79FB-40B8-BF07-AADF03F813AC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxFPSCamera</string>
+		</dict>
+	</array>
+</dict>
+</plist>

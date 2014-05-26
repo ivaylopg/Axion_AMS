@@ -1,6 +1,9 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxFPSCamera.h"
+#include "ofxAssimpModelLoader.h"
+#include "ofVboMesh.h"
 
 class ofApp : public ofBaseApp{
 
@@ -18,5 +21,15 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		
+    
+    ofSpherePrimitive starSphere;
+    ofSpherePrimitive earthSphere;
+    bool showFR;
+    
+    ofxFPSCamera cam;
+	
+	ofxAssimpModelLoader station;
+    ofMesh stationMesh;
+    ofLight	light;
+    ofLight	light2;
 };
