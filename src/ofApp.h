@@ -22,14 +22,21 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    ofSpherePrimitive starSphere;
-    ofSpherePrimitive earthSphere;
-    bool showFR;
     
+    bool showFR;
     ofxFPSCamera cam;
 	
+    ofSpherePrimitive starSphere;
+    ofSpherePrimitive earthSphere;
+    ofImage stars;
+    ofImage earth;
+    
+    ofMaterial starsM;
+    ofMaterial earthM;
+    
 	ofxAssimpModelLoader station;
     ofMesh stationMesh;
     ofLight	light;
     ofLight	light2;
+
 };

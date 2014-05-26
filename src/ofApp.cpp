@@ -28,6 +28,12 @@ void ofApp::setup(){
     earthSphere.setResolution(24);
     earthSphere.setMode(OF_PRIMITIVE_TRIANGLES);
     
+    ofDisableArbTex();
+    stars.loadImage("TychoStars.jpg");
+    stars.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
+    earth.loadImage("Earth/earth_cloudy_diffuse.jpg");
+    earth.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
+    
 //    #ifdef __APPLE__
 //        CGDisplayHideCursor(NULL); // <- Sometimes necessary to hide cursor on Macs
 //    #endif
@@ -41,6 +47,7 @@ void ofApp::setup(){
     light2.setPosition(-1920, -1080, -500);
     
     cam.setFarClip(20000.0);
+    
 }
 
 //--------------------------------------------------------------
@@ -51,13 +58,17 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(0);
+    ofSetColor(255);
     
     cam.begin();
     
-    ofSetColor(255, 0, 0);
+    starsM.begin();
+    //ofSetColor(255, 0, 0);
+    ofSetColor(255);
+    stars.getTextureReference().bind();
     starSphere.setPosition(0,0,0);
-    starSphere.drawWireframe();
-    
+    starSphere.draw();
+    starsM.end();
     
     
     ofEnableLighting();
@@ -66,17 +77,21 @@ void ofApp::draw(){
     light2.enable();
     ofEnableSeparateSpecularLight();
     
-    ofSetColor(0, 255, 0);
+    earthM.begin();
+    //ofSetColor(0, 0, 255);
+    ofSetColor(64);
+    earth.getTextureReference().bind();
     earthSphere.setPosition(4000,2000,2000);
-    earthSphere.drawWireframe();
+    earthSphere.draw();
+    earthM.end();
     
     
     
-    ofSetColor(255);
-    
-    ///*
+    ofSetColor(0);
     station.drawFaces();
     
+    // ISS Texture //////
+    /*
     ofxAssimpMeshHelper & meshHelper = station.getMeshHelper(0);
     ofMultMatrix(station.getModelMatrix());
     ofMultMatrix(meshHelper.matrix);
@@ -93,10 +108,8 @@ void ofApp::draw(){
     
     //station.drawWireframe();
     //station.drawFaces();
-    
-     //*/
-    
-   
+    */
+    /////////////////////
     
     light.disable();
     light2.disable();
