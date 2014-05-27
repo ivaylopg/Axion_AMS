@@ -22,17 +22,17 @@ void ofApp::setup(){
     stationMesh = station.getCurrentAnimatedMesh(0);
     
     starSphere.setRadius(10000);
-    starSphere.setResolution(24);
+    starSphere.setResolution(48);
     starSphere.setMode(OF_PRIMITIVE_TRIANGLES);
     
-    earthSphere.setRadius(4000);
-    earthSphere.setResolution(24);
+    earthSphere.setRadius(8000);
+    earthSphere.setResolution(48);
     earthSphere.setMode(OF_PRIMITIVE_TRIANGLES);
     
     ofDisableArbTex();
     stars.loadImage("TychoStars.jpg");
     stars.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
-    earth.loadImage("Earth/earth_cloudy_diffuse.jpg");
+    earth.loadImage("Earth/earth_cloudy_diffuse_bw.jpg");
     earth.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
     
 //    #ifdef __APPLE__
@@ -83,7 +83,7 @@ void ofApp::draw(){
     //ofSetColor(0, 0, 255);
     ofSetColor(64);
     earth.getTextureReference().bind();
-    earthSphere.setPosition(4000,2000,2000);
+    earthSphere.setPosition(8000,4000,4000);
     earthSphere.draw();
     earthM.end();
     
@@ -151,7 +151,7 @@ void ofApp::keyReleased(int key){
             showFR = !showFR;
             break;
             
-        case 's':
+        case 'x':
             cam.saveCameraPosition();
             break;
             
