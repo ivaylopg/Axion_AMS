@@ -142,6 +142,7 @@ void ofApp::draw(){
     //cout << ofDistSquared(ams.getPosition().x, ams.getPosition().z, cam.getPosition().x, cam.getPosition().z) << endl;
     
     float dist = ofClamp(ofDistSquared(ams.getPosition().x, ams.getPosition().z, cam.getPosition().x, cam.getPosition().z), 5000, 500000);
+    cam.speed = ofMap(dist, 5000, 500000, 4.0, 8.0);
     
     labelPos = cam.worldToScreen(ams.getPosition());
     
@@ -154,7 +155,7 @@ void ofApp::draw(){
         ofDrawBitmapString(ofToString(ofGetFrameRate(),2), 50,ofGetHeight()-50);
     }
     
-    ofDrawBitmapString(ofToString(dist,2) + " | " + ofToString(labelHeight,2), 50,ofGetHeight()-30);
+    //ofDrawBitmapString(ofToString(dist,2) + " | " + ofToString(labelHeight,2), 50,ofGetHeight()-30);
     
     
     ofSetColor(255,ofMap(dist, 5000, 500000, 255, 0));
@@ -183,7 +184,7 @@ void ofApp::keyReleased(int key){
             break;
             
         case 'x':
-            cam.saveCameraPosition();
+            //cam.saveCameraPosition();
             break;
             
         default:
