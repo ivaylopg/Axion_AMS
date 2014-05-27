@@ -12,14 +12,19 @@ void ofApp::setup(){
     cam.loadCameraPosition();
     //cam.lockHeight = false;
     cam.setMinMaxY(40, 40);
-    //cam.speed = 1.0f;
+    cam.speed = 4.0f;
     cam.upDir = ofVec3f(0,-1,0);
     
-    //station.loadModel("iss.obj");
     station.loadModel("ISS3_3DS/iss.3ds");
     station.setPosition(0, 0, 0);
     station.update();
-    stationMesh = station.getCurrentAnimatedMesh(0);
+    //stationMesh = station.getCurrentAnimatedMesh(0);
+    
+    ams.loadModel("ams.obj");
+    ams.setScale(0.05, 0.05, 0.05);
+    //ams.setRotation(0, 90, 1.0, 0.0, 0.0);
+    ams.setPosition(-165, -25, 5);
+    ams.update();
     
     starSphere.setRadius(10000);
     starSphere.setResolution(48);
@@ -49,6 +54,8 @@ void ofApp::setup(){
     
     cam.setFarClip(20000.0);
     eSpin = -0.01;
+    labelPos = ofVec3f(0,0,0);
+    labelHeight = 50;
     
 }
 
@@ -112,6 +119,17 @@ void ofApp::draw(){
     //station.drawFaces();
     */
     /////////////////////
+    ofSetColor(255,0,0);
+    
+    ofPushMatrix();
+    ofTranslate(ams.getPosition().x, ams.getPosition().y,ams.getPosition().z);
+    //ofTranslate(ams.getPosition());
+    ofRotateY(-90);
+    ofRotateX(-90);
+    //ofTranslate(ams.getPosition().scale(-1.0));
+    ofTranslate(-ams.getPosition().x, -ams.getPosition().y,-ams.getPosition().z);
+    ams.drawFaces();
+    ofPopMatrix();
     
     light.disable();
     light2.disable();
@@ -121,6 +139,12 @@ void ofApp::draw(){
     
     
     
+    //cout << ofDistSquared(ams.getPosition().x, ams.getPosition().z, cam.getPosition().x, cam.getPosition().z) << endl;
+    
+    float dist = ofClamp(ofDistSquared(ams.getPosition().x, ams.getPosition().z, cam.getPosition().x, cam.getPosition().z), 5000, 500000);
+    
+    labelPos = cam.worldToScreen(ams.getPosition());
+    
     cam.end();
     
     
@@ -129,6 +153,13 @@ void ofApp::draw(){
         ofSetColor(255);
         ofDrawBitmapString(ofToString(ofGetFrameRate(),2), 50,ofGetHeight()-50);
     }
+    
+    ofDrawBitmapString(ofToString(dist,2) + " | " + ofToString(labelHeight,2), 50,ofGetHeight()-30);
+    
+    
+    ofSetColor(255,ofMap(dist, 5000, 500000, 255, 0));
+    ofLine(labelPos.x, labelPos.y, labelPos.x+200,labelPos.y+200);
+    ofDrawBitmapString("Alpha Magnetic Spectrometer (AMS-02) Experiment", labelPos.x+200,labelPos.y+200);
 
 }
 

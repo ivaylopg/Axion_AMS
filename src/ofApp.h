@@ -25,6 +25,8 @@ class ofApp : public ofBaseApp{
     
     bool showFR;
     ofxFPSCamera cam;
+    ofVec3f labelPos;
+    float labelHeight;
 	
     ofSpherePrimitive starSphere;
     ofSpherePrimitive earthSphere;
@@ -37,6 +39,9 @@ class ofApp : public ofBaseApp{
     
 	ofxAssimpModelLoader station;
     ofMesh stationMesh;
+    
+    ofxAssimpModelLoader ams;
+    ofMesh amsMesh;
     ofLight	light;
     ofLight	light2;
 
