@@ -40,10 +40,10 @@ void ofApp::setup(){
     earth.loadImage("Earth/earth_cloudy_diffuse_bw.jpg");
     earth.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
     
-//    #ifdef __APPLE__
-//        CGDisplayHideCursor(NULL); // <- Sometimes necessary to hide cursor on Macs
-//    #endif
-//    ofHideCursor();
+    #ifdef __APPLE__
+        CGDisplayHideCursor(NULL); // <- Sometimes necessary to hide cursor on Macs
+    #endif
+    ofHideCursor();
     
     ofEnableBlendMode(OF_BLENDMODE_ALPHA);
     ofEnableDepthTest();
