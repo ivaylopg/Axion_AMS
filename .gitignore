@@ -48,4 +48,4 @@ xcuserdata
 .svn
 CVS
 
-Axion_AMS.xcodeproj/project.xcworkspace/xcuserdata/ivaylopg.xcuserdatad/UserInterfaceState.xcuserstate
+bin/Axion_AMSDebug.app/*
