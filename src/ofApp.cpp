@@ -16,12 +16,12 @@ void ofApp::setup(){
     //cam.upDir = ofVec3f(0,-1,0);
     cam.flipCam();
     
-    station.loadModel("ISS3_3DS/iss.3ds");
+    station.loadModel("ISS/ISS3_3DS/iss.3ds");
     station.setPosition(0, 0, 0);
     station.update();
     //stationMesh = station.getCurrentAnimatedMesh(0);
     
-    ams.loadModel("ams.obj");
+    ams.loadModel("ISS/ams.obj");
     ams.setScale(0.05, 0.05, 0.05);
     //ams.setRotation(0, 90, 1.0, 0.0, 0.0);
     ams.setPosition(-165, -25, 5);
@@ -36,9 +36,9 @@ void ofApp::setup(){
     earthSphere.setMode(OF_PRIMITIVE_TRIANGLES);
     
     ofDisableArbTex();
-    stars.loadImage("TychoStars.jpg");
+    stars.loadImage("ISS/TychoStars.jpg");
     stars.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
-    earth.loadImage("Earth/earth_cloudy_diffuse_bw.jpg");
+    earth.loadImage("ISS/Earth/earth_cloudy_diffuse_bw.jpg");
     earth.getTextureReference().setTextureWrap( GL_REPEAT, GL_REPEAT );
     
     #ifdef __APPLE__
