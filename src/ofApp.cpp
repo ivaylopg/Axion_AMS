@@ -5,7 +5,7 @@ void ofApp::setup(){
     ofSetVerticalSync(true);
     ofSetFrameRate(60);
     
-    showFR = false;
+    showFR = true;
     
     cam.setup();
     cam.reset(-100);
@@ -147,14 +147,15 @@ void ofApp::draw(){
     
     //float dist = ofClamp(ofDistSquared(ams.getPosition().x, ams.getPosition().z, cam.getPosition().x, cam.getPosition().z), 5000, 500000);
     double dist = ofDistSquared(ams.getPosition().x, ams.getPosition().z, cam.getPosition().x, cam.getPosition().z);
-    cam.speed = ofMap(dist, 5000, 500000, 4.0, 8.0,true);
+    cam.speed = ofMap(dist, 5000, 500000, 4.0 * (60/ofGetFrameRate()), 7.0 * (60/ofGetFrameRate()),true);
     
     labelPos = cam.worldToScreen(ams.getPosition());
     
     cam.end();
     
     
-    ofDrawBitmapString(ofToString(dist,3), 50,ofGetHeight()-50);
+    ofDrawBitmapString(ofToString(dist,3), 50,ofGetHeight()-100);
+    ofDrawBitmapString(ofToString(cam.speed,3), 50,ofGetHeight()-75);
     if (showFR) {
         ofSetColor(255);
         ofDrawBitmapString(ofToString(ofGetFrameRate(),2), 50,ofGetHeight()-50);
