@@ -24,7 +24,8 @@ void ofApp::setup(){
     ams.loadModel("ISS/ams.obj");
     ams.setScale(0.05, 0.05, 0.05);
     //ams.setRotation(0, 90, 1.0, 0.0, 0.0);
-    ams.setPosition(-165, -25, 5);
+    //ams.setPosition(-165, -25, 5);
+    ams.setPosition(-185, -10, 5);
     ams.update();
     
     starSphere.setRadius(10000);
@@ -57,6 +58,8 @@ void ofApp::setup(){
     eSpin = -0.01;
     labelPos = ofVec3f(0,0,0);
     labelHeight = 50;
+    
+    
     
 }
 
@@ -142,15 +145,16 @@ void ofApp::draw(){
     
     //cout << ofDistSquared(ams.getPosition().x, ams.getPosition().z, cam.getPosition().x, cam.getPosition().z) << endl;
     
-    float dist = ofClamp(ofDistSquared(ams.getPosition().x, ams.getPosition().z, cam.getPosition().x, cam.getPosition().z), 5000, 500000);
-    cam.speed = ofMap(dist, 5000, 500000, 4.0, 8.0);
+    //float dist = ofClamp(ofDistSquared(ams.getPosition().x, ams.getPosition().z, cam.getPosition().x, cam.getPosition().z), 5000, 500000);
+    double dist = ofDistSquared(ams.getPosition().x, ams.getPosition().z, cam.getPosition().x, cam.getPosition().z);
+    cam.speed = ofMap(dist, 5000, 500000, 4.0, 8.0,true);
     
     labelPos = cam.worldToScreen(ams.getPosition());
     
     cam.end();
     
     
-    
+    ofDrawBitmapString(ofToString(dist,3), 50,ofGetHeight()-50);
     if (showFR) {
         ofSetColor(255);
         ofDrawBitmapString(ofToString(ofGetFrameRate(),2), 50,ofGetHeight()-50);
@@ -161,7 +165,7 @@ void ofApp::draw(){
     
     ofSetColor(255,ofMap(dist, 5000, 500000, 255, 0));
     ofLine(labelPos.x, labelPos.y, labelPos.x+200,labelPos.y+200);
-    ofDrawBitmapString("Alpha Magnetic Spectrometer (AMS-02) Experiment", labelPos.x+200,labelPos.y+200);
+    ofDrawBitmapString("Alpha Magnetic Spectrometer (AMS-02) Experiment\nDark Matter Detector", labelPos.x+200,labelPos.y+200);
 
 }
 
