@@ -16,8 +16,10 @@ Release*/
 *.pyc
 
 # openFrameworks Specific #
+bin/*
 */bin/*
 !*/bin/data/
+!bin/data/
 
 # Big Files #
 *.mov
@@ -49,3 +51,4 @@ xcuserdata
 CVS
 
 bin/Axion_AMSDebug.app/*
+Axion_AMS.xcodeproj/project.xcworkspace/xcuserdata/ivaylopg.xcuserdatad/UserInterfaceState.xcuserstate
