@@ -13,7 +13,8 @@ void ofApp::setup(){
     //cam.lockHeight = false;
     cam.setMinMaxY(40, 40);
     cam.speed = 4.0f;
-    cam.upDir = ofVec3f(0,-1,0);
+    //cam.upDir = ofVec3f(0,-1,0);
+    cam.flipCam();
     
     station.loadModel("ISS3_3DS/iss.3ds");
     station.setPosition(0, 0, 0);
