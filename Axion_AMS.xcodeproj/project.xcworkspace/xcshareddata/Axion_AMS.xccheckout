@@ -22,9 +22,9 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2DE9C8846D9375EAACFABA8963120E8E7719BAF5</key>
-		<string>../../../../..</string>
+		<string>../../..</string>
 		<key>986948EE7DEA7E683C8212B566F387B8EFDD2A40</key>
-		<string>../../../../../addons/ofxFPSCamera</string>
+		<string>../../../addons/ofxFPSCamera</string>
 		<key>A70343285709287FF66830CB04E1E8CDD4B4A500</key>
 		<string>../..</string>
 	</dict>
@@ -42,7 +42,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>2DE9C8846D9375EAACFABA8963120E8E7719BAF5</string>
 			<key>IDESourceControlWCCName</key>
-			<string>..</string>
+			<string></string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
